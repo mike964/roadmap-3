@@ -1,6 +1,7 @@
 require( 'dotenv' ).config( { path: './config/config.env' } )
 const express = require( 'express' )
 const cookieParser = require( 'cookie-parser' )
+const compression = require( 'compression' )
 const connectDB = require( './config/db' )
 const logger = require( './middleware/logger.mdlwr' )
 const errorHandler = require( './middleware/error.mdlwr' )
@@ -17,6 +18,7 @@ app.use( express.json() )
 app.use( cookieParser() )
 app.use( logger )
 app.use( errorHandler )
+app.use( compression )
 
 // Hi Guys :)
 

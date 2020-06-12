@@ -7,7 +7,7 @@ const User = require( '../models/User' );
 exports.protect = asyncHandler( async ( req, res, next ) => {
   let token
 
-  console.log( req.cookies )
+  // console.log( req.cookies )
 
   if (
     req.headers.authorization &&
