@@ -6,20 +6,17 @@ const mongoURI = "mongodb+srv://mike:mike1234@cluster0-gpzsv.mongodb.net/roadmap
 // const mongoURI = "mongodb://localhost/moslm-roadmap"
 
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect( mongoURI, {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true
-    } )
-    console.log( 'MongoDB Connected ...' )
-
-  } catch ( err ) {
-    console.error( err.message )
-    process.exit( 1 )
-  }
+const connectDB = () => {
+  mongoose.connect( uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+  } )
+    .then( () => console.log( 'Database Connected' ) )
+    .catch( err => console.log( err ) )
 }
+
+
 
 module.exports = connectDB
