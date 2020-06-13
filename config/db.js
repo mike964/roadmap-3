@@ -1,8 +1,9 @@
 const mongoose = require( 'mongoose' )
-// require( 'dotenv' ).config()
+require( 'dotenv' ).config()
 
-const mongoURI = "mongodb+srv://mike:mike1234@cluster0-gpzsv.mongodb.net/roadmap-db?retryWrites=true&w=majority"
 // const mongoURI = process.env.MONGO_URI
+const mongoURI = "mongodb+srv://mike:mike1234@cluster0-gpzsv.mongodb.net/roadmap-db?retryWrites=true&w=majority"
+// const mongoURI = "mongodb://localhost/moslm-roadmap"
 
 
 const connectDB = async () => {

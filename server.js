@@ -18,14 +18,15 @@ app.use( express.json() )
 app.use( cookieParser() )
 app.use( logger )
 app.use( errorHandler )
-app.use( compression )
+// app.use( compression )
 
 // Hi Guys :)
 
 // app.use( '/', ( req, res ) =>
-app.all( '/', ( req, res ) =>
-  res.send( `Hi Bitch! You made ${ req.method } request to '${ req.originalUrl }' ` )
-)
+// app.all( '/', ( req, res, next ) => {
+//   res.send( `Hi Bitch! You made ${ req.method } request to '${ req.originalUrl }' ` )
+//   next()
+// } )
 
 // *** Mounting Routers ***
 app.use( '/api/v1/auth', require( './routes/auth.route' ) )
