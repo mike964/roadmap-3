@@ -1,5 +1,6 @@
 require( 'dotenv' ).config( { path: './config/config.env' } )
 const express = require( 'express' )
+var cors = require( 'cors' )
 const cookieParser = require( 'cookie-parser' )
 const compression = require( 'compression' )
 const connectDB = require( './config/db' )
@@ -7,9 +8,12 @@ const logger = require( './middleware/logger.mdlwr' )
 const errorHandler = require( './middleware/error.mdlwr' )
 
 //=====================================================================
-const app = express()
 const port = process.env.PORT || 3500
 connectDB()
+
+const app = express()
+app.use( cors() )
+
 
 // *** Using Middlewares *** 
 // Request Body Parser
