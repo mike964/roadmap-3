@@ -1,14 +1,8 @@
 const mongoose = require( 'mongoose' )
-require( 'dotenv' ).config()
+// require( 'dotenv' ).config()
 
-let mongoURI
-
-if ( process.env.LOCAL_DB === true ) {
-  mongoURI = process.env.LOCAL_MONGO_URI
-} else {
-  mongoURI = process.env.ATLAS_MONGO_URI
-}
-// mongodb+srv://moslmiraqi:<password>@cluster0-lxfar.mongodb.net/<dbname>?retryWrites=true&w=majority
+const mongoURI = "mongodb+srv://mike:mike1234@cluster0-gpzsv.mongodb.net/roadmap-db?retryWrites=true&w=majority"
+// const mongoURI = process.env.MONGO_URI
 
 
 const connectDB = async () => {

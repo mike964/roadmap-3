@@ -20,7 +20,8 @@ router.use( protect )
 
 router
   .route( '/' )
-  .get( restrictedTo( 'admin' ), getProjects )
+  // .get( restrictedTo( 'admin' ), getProjects )
+  .get( getProjects )
   .post( setUser, createProject )
 
 router.route( '/my-projects' )
