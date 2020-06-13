@@ -22,11 +22,11 @@ app.use( errorHandler )
 
 // Hi Guys :)
 
-// app.use( '/', ( req, res ) =>
-// app.all( '/', ( req, res, next ) => {
-//   res.send( `Hi Bitch! You made ${ req.method } request to '${ req.originalUrl }' ` )
-//   next()
+// app.use( '/', ( req, res ) => 
+//   res.send( `Hi Bitch! You made ${ req.method } request to '${ req.originalUrl }' ` ) 
 // } )
+
+app.get( '/', ( req, res ) => res.send( 'Hello World!' ) )
 
 // *** Mounting Routers ***
 app.use( '/api/v1/auth', require( './routes/auth.route' ) )
